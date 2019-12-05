@@ -60,3 +60,21 @@ var questions = [{
         answer: 1,
     },
 ];
+
+//set timer for limited amount of time 90 second
+var counter = 90;
+var timer = setInterval(decreaseCounter, 1 * 1000)
+
+// display initial time countdown
+function decreaseCounter() {
+    counter--;
+    $('.timeGoDown').text('Time remaining: ' + counter);
+    $('form').show()
+
+    //The game ends when the time runs out, and the result will display
+    if (counter == 0) {
+        $('.timeGoDown').text('Time is up!')
+        clearInterval(timer)
+        showResults();
+    }
+}
