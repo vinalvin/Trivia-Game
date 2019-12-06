@@ -68,12 +68,12 @@ var timer = setInterval(decreaseCounter, 1 * 1000)
 // display initial time countdown
 function decreaseCounter() {
     counter--;
-    $('.timeGoDown').text('Time remaining: ' + counter);
+    $('.timeCountDown').text('Time Remaining: ' + counter);
     $('form').show()
 
     //The game ends when the time runs out, and the result will display
     if (counter == 0) {
-        $('.timeGoDown').text('Time is up!')
+        $('.timeCountDown').text('Time is up!')
         clearInterval(timer)
         showResults();
     }
@@ -109,7 +109,7 @@ function render() {
     }
 
     //create a button to submit
-    var btn = $('<button>').text("Done")
+    var btn = $('<button>').text("Submit")
     $('form').append(btn)
 }
 
@@ -155,7 +155,7 @@ function showResults() {
     console.log(questions.length - correctAns)
 
     //display text when time runs out
-    $('.timeGoDown').text('All Done!')
+    $('.timeCountDown').text('Congratulation! All Done!')
 
     //clear timer
     clearInterval(timer)
